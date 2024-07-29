@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form method="post">
+        {% csrf_token %}
+        {% if form.non_field_errors %}
+        <p class="error-message">{{ form.non_field_errors }}</p>
+        {% endif %}
+        <p>
+            <label for="username">Email:</label>
+            <input type="email" name="username" id="username" value="username">
+        </p>
+        <p>
+            <label for="password">password</label>
+            <input type="password" name="password" id="password" value="password">
+        </p>
+        <button type="submit">submit</button>
+    </form>
+    
+</body>
+</html>
